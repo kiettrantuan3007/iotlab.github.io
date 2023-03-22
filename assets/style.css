@@ -247,7 +247,6 @@ nav .menu_header .menu_header-child:hover {
 /*footer*/
 #footer {
   display: flex;
-  position: fixed;
   height: auto;
   background-color: #333;
   bottom: 0;
@@ -266,4 +265,14 @@ nav .menu_header .menu_header-child:hover {
 
 .jcc {
   justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+  body>div>div>div.MainControl {
+    flex-direction: column;
+  }
+
+  body>div>div>div.MainTracking {
+    flex-direction: column;
+  }
 }
