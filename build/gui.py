@@ -17,7 +17,6 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\kiett\Desktop\iotLabPythonGUI\tkinte
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-
 import pyrebase
 
 config = {
@@ -41,17 +40,17 @@ pH_init = 0
 def stream_handler(message):
     if type(message["data"]) == dict:
         canvas.itemconfig(data_Oxygen, text=message["data"]["Oxygen"])
-        if (float(message["data"]["Oxygen"]) > 7) or (float(message["data"]["Oxygen"]) < 2):
+        if (float(message["data"]["Oxygen"]) > 14) or (float(message["data"]["Oxygen"]) < 11):
             canvas.itemconfig(image_11, state="normal")
         else:
             canvas.itemconfig(image_11, state="hidden")
         canvas.itemconfig(data_Quality, text=message["data"]["Quality"])
-        if (float(message["data"]["Quality"]) < 20) or (float(message["data"]["Quality"]) > 80):
+        if (float(message["data"]["Quality"]) < 150) or (float(message["data"]["Quality"]) > 250):
             canvas.itemconfig(image_12, state="normal")
         else:
             canvas.itemconfig(image_12, state="hidden")
         canvas.itemconfig(data_pH, text=message["data"]["PH_value"])
-        if (float(message["data"]["PH_value"]) > 12) or (float(message["data"]["PH_value"]) < 3):
+        if (float(message["data"]["PH_value"]) > 9) or (float(message["data"]["PH_value"]) < 6.5):
             canvas.itemconfig(image_15, state="normal")
         else:
             canvas.itemconfig(image_15, state="hidden")
