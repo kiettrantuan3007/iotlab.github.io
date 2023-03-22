@@ -1,270 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/style.css">
 
-    <title>IOT</title>
+  <title>IOT</title>
 
 </head>
+
 <body>
-<div class="background">
+  <div class="background">
     <video autoplay muted loop id="myVideo">
-        <source src="./assets/video/background.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
+      <source src="./assets/video/background.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
     </video>
     <Header>
-        <H1 class="textbanner">
-            Aquarium
-        </H1>
-        <Div>
-            <nav>
-                <ul class="menu_header">
-                    <li class="menu_header-child"><a href="#">Home</a></li>
-                    <li class="menu_header-child"><a href="#">Mai Hồng Phong</a></li>
-                    <li class="menu_header-child"><a href="#">Phan Minh Nhật</a></li>
-                    <li class="menu_header-child"><a href="#">Trần Tuấn Kiệt</a></li>
-                </ul>
-            </nav>
+      <H1 class="textbanner">
+        Aquarium
+      </H1>
+      <Div>
+        <nav>
+          <ul class="menu_header">
+            <li class="menu_header-child" id="turnOnAll"><a href="#">Turn on all</a></li>
+            <li class="menu_header-child" id="turnOffAll"><a href="#">Turn off all</a></li>
+            <li class="menu_header-child" id="restartAll"><a href="#">Restart all</a></li>
+          </ul>
+        </nav>
 
-        </Div>
+      </Div>
     </Header>
     <!-- Main -->
     <div class="Card">
 
 
-        <!-- Main Control -->
-        <div class="MainControl">
-            <div class="MainCard">
-                <h2 class="tittleCard">Air Pump</h2>
-                <div class="ncard">
-                    <div class="AirPump .flex">
-                        <img class="AirPump-img .flex" id="AirPump-img">
-                    </div>
-                    <div class="switch .flex">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary form-check-input01-1">ON</button>
-                            <button type="button" class="btn btn-secondary form-check-input01-2">OFF</button>
-                        </div>
-                    </div>
-                </div>
+      <!-- Main Control -->
+      <div class="MainControl">
+        <div class="MainCard">
+          <h2 class="tittleCard">Air Pump</h2>
+          <div class="ncard">
+            <div class="AirPump .flex">
+              <img class="AirPump-img .flex" id="AirPump-img">
             </div>
-
-            <div class="MainCard">
-                <h2 class="tittleCard">Wave forming machine</h2>
-                <div class="ncard">
-                    <div class="sWaveFM .flex">
-                        <img class="sWaveFM-img .flex" id="sWaveFM-img">
-                    </div>
-                    <div class="switch .flex">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary form-check-input02-1">ON</button>
-                            <button type="button" class="btn btn-secondary form-check-input02-2">OFF</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="switch .flex">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary form-check-input01-1">ON</button>
+                <button type="button" class="btn btn-secondary form-check-input01-2">OFF</button>
+              </div>
             </div>
-
-            <div class="MainCard">
-                <h2 class="tittleCard">Purified Water</h2>
-                <div class="ncard">
-                    <div class="sPurifiedWaterImg .flex">
-                        <img class="sPurifiedWater-img .flex" id="sPurifiedWater-img">
-                    </div>
-                    <div class="switch .flex">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-secondary form-check-input03-1">ON</button>
-                            <button type="button" class="btn btn-secondary form-check-input03-2">OFF</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
 
-        <!-- Main Tracking -->
-        <div class="MainTracking">
-            <div class="MainCard">
-                <h2 class="tittleCard">Oxygen</h2>
-                <div class="ncard">
-                    <p>The current oxygen level is:</p>
-                    <span class="mainunit" id="Oxygen"></span><br>
-                    <span class="subunit">%</span>
-                    <!-- <p>Nhập nhiệt độ mới:</p> -->
-                    <!-- <div>
+        <div class="MainCard">
+          <h2 class="tittleCard">Wave forming machine</h2>
+          <div class="ncard">
+            <div class="sWaveFM .flex">
+              <img class="sWaveFM-img .flex" id="sWaveFM-img">
+            </div>
+            <div class="switch .flex">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary form-check-input02-1">ON</button>
+                <button type="button" class="btn btn-secondary form-check-input02-2">OFF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="MainCard">
+          <h2 class="tittleCard">Purified Water</h2>
+          <div class="ncard">
+            <div class="sPurifiedWaterImg .flex">
+              <img class="sPurifiedWater-img .flex" id="sPurifiedWater-img">
+            </div>
+            <div class="switch .flex">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary form-check-input03-1">ON</button>
+                <button type="button" class="btn btn-secondary form-check-input03-2">OFF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Main Tracking -->
+      <div class="MainTracking">
+        <div class="MainCard">
+          <h2 class="tittleCard">Oxygen</h2>
+          <div class="ncard">
+            <p>The current oxygen level is:</p>
+            <span class="mainunit" id="Oxygen"></span><br>
+            <span class="subunit">ppm</span>
+            <!-- <p>Nhập nhiệt độ mới:</p> -->
+            <!-- <div>
                       <input type="number" id="newOxygen" min="0" max="100" value="25" onkeypress="updateOnEnterOxygen(event)">
                       <button onclick="updateOxygen()">Cập nhật</button>
                     </div> -->
-                    <div id="alert01"></div>
-                </div>
-            </div>
+            <div id="alert01"></div>
+          </div>
+        </div>
 
-            <div class="MainCard">
-                <h2 class="tittleCard">Quality</h2>
-                <div class="ncard">
-                    <p>The current Quality level is:</p>
-                    <span class="mainunit" id="Quality"></span><br>
-                    <span class="subunit">ppm </span>
-                    <!-- <p>Nhập Độ ồn mới:</p> -->
-                    <!-- <div>
+        <div class="MainCard">
+          <h2 class="tittleCard">Quality</h2>
+          <div class="ncard">
+            <p>The current Quality level is:</p>
+            <span class="mainunit" id="Quality"></span><br>
+            <span class="subunit">ppm </span>
+            <!-- <p>Nhập Độ ồn mới:</p> -->
+            <!-- <div>
                       <input type="number" id="newPH_value" min="0" max="100" value="16" onkeypress="updateOnEnterPH_value(event)">
                       <button onclick="updatePH_value()">Cập nhật</button>
                     </div> -->
-                    <div id="alert02"></div>
-                </div>
+            <div id="alert02"></div>
+          </div>
+        </div>
+
+        <div class="MainCard">
+          <h2 class="tittleCard">PH</h2>
+          <div class="ncard">
+            <p>The current PH level is: </p>
+            <span class="mainunit" id="PH_value" class="PH_value"></span><br>
+            <span class="subunit"></span>
+            <!-- PH ruler -->
+
+            <div class="ph-meter">
+              <div class="ph-level"></div>
+              <br>
+              <div class="ph-range">
+                <span class="phspan">0</span>
+                <span class="phspan">3.5</span>
+                <span class="phspan">7</span>
+                <span class="phspan">10</span>
+                <span class="phspan">14</span>
+              </div>
             </div>
 
-            <div class="MainCard">
-                <h2 class="tittleCard">PH</h2>
-                <div class="ncard">
-                    <p>The current PH level is: </p>
-                    <span class="mainunit" id="PH_value" class="PH_value"></span><br>
-                    <span class="subunit"></span>
-                    <!-- PH ruler -->
-
-                    <div class="ph-meter">
-                        <div class="ph-level"></div>
-                        <br>
-                        <div class="ph-range">
-                            <span class="phspan">0</span>
-                            <span class="phspan">3.5</span>
-                            <span class="phspan">7</span>
-                            <span class="phspan">10</span>
-                            <span class="phspan">14</span>
-                        </div>
-                    </div>
-
-                    <!-- <p>Nhập độ ẩm mới:</p> -->
-                    <!-- <div>
+            <!-- <p>Nhập độ ẩm mới:</p> -->
+            <!-- <div>
                       <input type="number" id="newPH_value" min="0" max="100" value="50" onkeypress="updateOnEnterPH_value(event)">
                       <button onclick="updatePH_value()">Cập nhật</button>
                     </div> -->
-                    <div id="alert03"></div>
-                </div>
-            </div>
-
+            <div id="alert03"></div>
+          </div>
         </div>
-        <script src="./assets/code.js"></script>
+
+      </div>
+      <script src="./assets/code.js"></script>
     </div>
     <!-- <button id="update">Update</button> -->
 
     <footer id="footer" style="color: white;">Powered by @team Mai Hong Phong - Phan Minh Nhat - Tran Tuan Kiet - SDT:
-        0865 241 215
+      0865 241 215
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
     <script type="module">
-          // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+      // Import the functions you need from the SDKs you need
+      import {
+        initializeApp
+      } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+      import {
+        getAnalytics
+      } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyDd-1o1naDuO_GnaVnlizt96E9ab58eTY8",
-          authDomain: "iotprofinal.firebaseapp.com",
-          databaseURL: "https://iotprofinal-default-rtdb.firebaseio.com",
-          projectId: "iotprofinal",
-          storageBucket: "iotprofinal.appspot.com",
-          messagingSenderId: "309628910726",
-          appId: "1:309628910726:web:ebcf98bc00583387f32507",
-          measurementId: "G-LLM6DQBCFV"
-        };
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDd-1o1naDuO_GnaVnlizt96E9ab58eTY8",
+        authDomain: "iotprofinal.firebaseapp.com",
+        databaseURL: "https://iotprofinal-default-rtdb.firebaseio.com",
+        projectId: "iotprofinal",
+        storageBucket: "iotprofinal.appspot.com",
+        messagingSenderId: "309628910726",
+        appId: "1:309628910726:web:ebcf98bc00583387f32507",
+        measurementId: "G-LLM6DQBCFV"
+      };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        import { getDatabase, ref, get, set, onValue, child, update, remove } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js"
-        const db = getDatabase();
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        onValue,
+        child,
+        update,
+        remove
+      } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js"
+      const db = getDatabase();
 
-        function ReadData(where = "Data") {
-            onValue(child(ref(db), where + '/'), (dataReceive) => {
-                if (dataReceive.exists()) {
-                    document.querySelector('#Oxygen').innerText = dataReceive.toJSON().Oxygen;
-                    document.querySelector('#PH_value').innerHTML = dataReceive.toJSON().PH_value;
-                    document.querySelector('#Quality').innerText = dataReceive.toJSON().Quality;
-                }
-                console.log(dataReceive.toJSON())
-
-                         // Sử dụng hàm updatePhLevel để cập nhật giá trị độ pH
-                          updatePhLevel(parseFloat(dataReceive.toJSON().PH_value));
-                         //cảnh báo giá trị vượt ngưỡng
-                         checkOxygenValue(parseFloat(dataReceive.toJSON().Oxygen), 2, 7)
-                         checkQualityValue(parseFloat(dataReceive.toJSON().Quality), 20, 80)
-            })
-        }
-
-        ReadData();
-        // PH ruler
-        var phMeter = document.querySelector('.ph-meter');
-
-        function updatePhLevel(pH) {
-           // Giới hạn giá trị pH trong khoảng từ 0 đến 14
-           pH = Math.min(Math.max(pH, 0), 14);
-           
-           // Tính toán vị trí của độ pH trên thước đo
-           var position = (pH / 14) * phMeter.offsetWidth;
-           
-           // Cập nhật vị trí của độ pH trên thước đo
-           var phLevel = phMeter.querySelector('.ph-level');
-           phLevel.style.width = position + 'px';
-           
-           // Cập nhật giá trị độ pH trên phạm vi đo
-           var phRange = phMeter.querySelector('.ph-range');
-           var phValueElements = phRange.querySelectorAll('phspan');
-           phValueElements.forEach(function(element) {
-             var value = parseFloat(element.textContent);
-             if (value === pH) {
-               element.classList.add('active');
-               setTimeout(function() {
-                 element.classList.remove('active');
-               }, 300);
-             } else {
-               element.classList.remove('active');
-             }
-           });
-         } 
-        //Warning
-        //Oxygen
-        function checkOxygenValue(inputValue, minValue, maxValue) {
-          var alertDisplay01 = document.getElementById('alert01');
-          if (inputValue < minValue) {
-            alertDisplay01.innerHTML = 'Warning: The Oxygen level low!';
-            
-          } else if (inputValue > maxValue) {
-            alertDisplay01.innerHTML = 'Warning: The Oxygen high!';
-          } else {
-            alertDisplay01.innerHTML = '';
+      function ReadData(where = "Data") {
+        onValue(child(ref(db), where + '/'), (dataReceive) => {
+          if (dataReceive.exists()) {
+            document.querySelector('#Oxygen').innerText = dataReceive.toJSON().Oxygen;
+            document.querySelector('#PH_value').innerHTML = dataReceive.toJSON().PH_value;
+            document.querySelector('#Quality').innerText = dataReceive.toJSON().Quality;
           }
-        }
-        //Quality
-        function checkQualityValue(inputValue, minValue, maxValue) {
-          var alertDisplay02 = document.getElementById('alert02');
-          if (inputValue < minValue) {
-            alertDisplay02.innerHTML = 'Warning: The Quality level low!';
-            
-          } else if (inputValue > maxValue) {
-            alertDisplay02.innerHTML = 'Warning: The Quality high!';
-          } else {
-            alertDisplay02.innerHTML = '';
-          }
-        }
-         
-   
-        
+          console.log(dataReceive.toJSON())
 
+          // Sử dụng hàm updatePhLevel để cập nhật giá trị độ pH
+          updatePhLevel(parseFloat(dataReceive.toJSON().PH_value));
+          //cảnh báo giá trị vượt ngưỡng
+          checkOxygenValue(parseFloat(dataReceive.toJSON().Oxygen), 11, 14)
+          checkQualityValue(parseFloat(dataReceive.toJSON().Quality), 150, 250)
+        })
+      }
+
+      ReadData();
+      // PH ruler
+      var phMeter = document.querySelector('.ph-meter');
+
+      function updatePhLevel(pH) {
+        // Giới hạn giá trị pH trong khoảng từ 0 đến 14
+        pH = Math.min(Math.max(pH, 0), 14);
+
+        // Tính toán vị trí của độ pH trên thước đo
+        var position = (pH / 14) * phMeter.offsetWidth;
+
+        // Cập nhật vị trí của độ pH trên thước đo
+        var phLevel = phMeter.querySelector('.ph-level');
+        phLevel.style.width = position + 'px';
+
+        // Cập nhật giá trị độ pH trên phạm vi đo
+        var phRange = phMeter.querySelector('.ph-range');
+        var phValueElements = phRange.querySelectorAll('phspan');
+        phValueElements.forEach(function(element) {
+          var value = parseFloat(element.textContent);
+          if (value === pH) {
+            element.classList.add('active');
+            setTimeout(function() {
+              element.classList.remove('active');
+            }, 300);
+          } else {
+            element.classList.remove('active');
+          }
+        });
+      }
+      //Warning
+      //Oxygen
+      function checkOxygenValue(inputValue, minValue, maxValue) {
+        var alertDisplay01 = document.getElementById('alert01');
+        if (inputValue < minValue) {
+          alertDisplay01.innerHTML = 'Warning: The Oxygen level low!';
+
+        } else if (inputValue > maxValue) {
+          alertDisplay01.innerHTML = 'Warning: The Oxygen high!';
+        } else {
+          alertDisplay01.innerHTML = '';
+        }
+      }
+      //Quality
+      function checkQualityValue(inputValue, minValue, maxValue) {
+        var alertDisplay02 = document.getElementById('alert02');
+        if (inputValue < minValue) {
+          alertDisplay02.innerHTML = 'Warning: The Quality level low!';
+
+        } else if (inputValue > maxValue) {
+          alertDisplay02.innerHTML = 'Warning: The Quality high!';
+        } else {
+          alertDisplay02.innerHTML = '';
+        }
+      }
     </script>
 
 
