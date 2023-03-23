@@ -27,19 +27,6 @@ switchImg2.addEventListener("click", async function () {
   AirPumpImg.src = "./assets/img/AirPump-OFF.png";
 });
 // AirPumpnlink
-fetch("https://blynk.cloud/external/api/get?token=Fqb4YaAJqU794tRTxXO0paLVdznjV6lN&V0")
-  .then((response) => response.json())
-  .then((data) => {
-    if (data == 1) {
-      AirPumpImg.src = "./assets/img/AirPump-ON.png";
-      isOn01 = !isOn01;
-    } else {
-      isOn01 = !isOn01;
-      AirPumpImg.src = "./assets/img/AirPump-OFF.png";
-    }
-
-  }
-  );
 
 //WaveFM
 const OswitchImg1 = document.querySelector(".form-check-input02-1");
@@ -69,18 +56,6 @@ OswitchImg2.addEventListener("click", async function () {
   sWaveFMImg.src = "./assets/img/waveFM-OFF.png";
 });
 // WaveBlink
-fetch("https://blynk.cloud/external/api/get?token=Fqb4YaAJqU794tRTxXO0paLVdznjV6lN&V1")
-  .then((response) => response.json())
-  .then((data) => {
-    if (data == 1) {
-      sWaveFMImg.src = "./assets/img/waveFM-ON.png";
-      isOn02 = !isOn02;
-    } else {
-      isOn02 = !isOn02;
-      sWaveFMImg.src = "./assets/img/waveFM-OFF.png";
-    }
-  }
-  );
 
 //Purified Water
 const PswitchImg1 = document.querySelector(".form-check-input03-1");
@@ -112,18 +87,47 @@ PswitchImg2.addEventListener("click", async function () {
 });
 sPurifiedWaterImg.src = "./assets/img/purified-water-ON.png";
 // Purified Water blink
-fetch("https://blynk.cloud/external/api/get?token=Fqb4YaAJqU794tRTxXO0paLVdznjV6lN&V2")
-  .then((response) => response.json())
-  .then((data) => {
-    if (data == 1) {
-      sPurifiedWaterImg.src = "./assets/img/purified-water-ON.png";
-      isOn03 = !isOn03;
-    } else {
-      isOn03 = !isOn03;
-      sPurifiedWaterImg.src = "./assets/img/purified-water-OFF.png";
+setInterval(() => {
+
+  fetch("https://blynk.cloud/external/api/get?token=Fqb4YaAJqU794tRTxXO0paLVdznjV6lN&V2")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data == 1) {
+        sPurifiedWaterImg.src = "./assets/img/purified-water-ON.png";
+        isOn03 = !isOn03;
+      } else {
+        isOn03 = !isOn03;
+        sPurifiedWaterImg.src = "./assets/img/purified-water-OFF.png";
+      }
     }
-  }
-  );
+    );
+  fetch("https://blynk.cloud/external/api/get?token=Fqb4YaAJqU794tRTxXO0paLVdznjV6lN&V1")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data == 1) {
+        sWaveFMImg.src = "./assets/img/waveFM-ON.png";
+        isOn02 = !isOn02;
+      } else {
+        isOn02 = !isOn02;
+        sWaveFMImg.src = "./assets/img/waveFM-OFF.png";
+      }
+    }
+    );
+  fetch("https://blynk.cloud/external/api/get?token=Fqb4YaAJqU794tRTxXO0paLVdznjV6lN&V0")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data == 1) {
+        AirPumpImg.src = "./assets/img/AirPump-ON.png";
+        isOn01 = !isOn01;
+      } else {
+        isOn01 = !isOn01;
+        AirPumpImg.src = "./assets/img/AirPump-OFF.png";
+      }
+
+    }
+    );
+
+}, 50)
 
 
 
