@@ -11,7 +11,7 @@ import time
 import tkinter.messagebox
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\kiett\Desktop\iotLabPythonGUI\tkinter\output\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame0")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -35,7 +35,6 @@ db = firebase.database()
 oxygen_init = 0
 quality_init = 0
 pH_init = 0
-
 
 def stream_handler(message):
     if type(message["data"]) == dict:
@@ -102,6 +101,25 @@ canvas = Canvas(
     bd=0,
     highlightthickness=0,
     relief="ridge"
+)
+
+
+data_Oxygen = canvas.create_text(
+    232.0,
+    632.0,
+    anchor="center",
+    text="Loading",
+    fill="#FF0000",
+    font=("Inter Bold", 50 * -1)
+)
+
+data_Quality = canvas.create_text(
+    570.0,
+    632.0,
+    anchor="center",
+    text="Loading",
+    fill="#FF0000",
+    font=("Inter Bold", 50 * -1)
 )
 
 canvas.place(x=0, y=0)
@@ -218,23 +236,6 @@ image_10 = canvas.create_image(
     image=image_image_10
 )
 
-data_Oxygen = canvas.create_text(
-    232.0,
-    632.0,
-    anchor="center",
-    text="Loading",
-    fill="#FF0000",
-    font=("Inter Bold", 50 * -1)
-)
-
-data_Quality = canvas.create_text(
-    570.0,
-    632.0,
-    anchor="center",
-    text="Loading",
-    fill="#FF0000",
-    font=("Inter Bold", 50 * -1)
-)
 
 image_11 = canvas.create_image(
     238.0,
