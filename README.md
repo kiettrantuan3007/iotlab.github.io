@@ -8,5 +8,5 @@ We deployed it on Github (this resposity)
 Secondly, if you want to run the python app, please go to /build directory to view all code and how to run it (read README.md in that directory) 
 # Diagram for whole project
 
-# Code for ESP32 at dir /ESP32
+# Code for ESP8266 at dir /ESP8266
 
